@@ -49,36 +49,36 @@ ident [A-Za-z][A-Za-z0-9]*
 
  /* słowa kluczowe */
 
-AND return process_token(yytext, "KW_AND", NULL, KW_AND);
-BEGIN return process_token(yytext, "KW_BEGIN", NULL, KW_BEGIN);
-CONST return process_token(yytext, "KW_CONST", NULL, KW_CONST);
-DIV return process_token(yytext, "KW_DIV", NULL, KW_DIV);
-DO return process_token(yytext, "KW_DO", NULL, KW_DO);
-ELSE return process_token(yytext, "KW_ELSE", NULL, KW_ELSE);
-ELSIF return process_token(yytext, "KW_ELSIF", NULL, KW_ELSIF);
-END return process_token(yytext, "KW_END", NULL, KW_END);
-FOR return process_token(yytext, "KW_FOR", NULL, KW_FOR);
-FROM return process_token(yytext, "KW_FROM", NULL, KW_FROM);
-IF return process_token(yytext, "KW_IF", NULL, KW_IF);
-IMPORT return process_token(yytext, "KW_IMPORT", NULL, KW_IMPORT);
-IN return process_token(yytext, "KW_IN", NULL, KW_IN);
-MOD return process_token(yytext, "KW_MOD", NULL, KW_MOD);
-MODULE return process_token(yytext, "KW_MODULE", NULL, KW_MODULE);
-NOT return process_token(yytext, "KW_NOT", NULL, KW_NOT);
-OR return process_token(yytext, "KW_OR", NULL, KW_OR);
-THEN return process_token(yytext, "KW_THEN", NULL, KW_THEN);
-TYPE return process_token(yytext, "KW_TYPE", NULL, KW_TYPE);
-TO return process_token(yytext, "KW_TO", NULL, KW_TO);
-VAR return process_token(yytext, "KW_VAR", NULL, KW_VAR);
-WHILE return process_token(yytext, "KW_WHILE", NULL, KW_WHILE);
-REPEAT return process_token(yytext, "KW_REPEAT", NULL, KW_REPEAT);
-UNTIL return process_token(yytext, "KW_UNTIL", NULL, KW_UNTIL);
-LOOP return process_token(yytext, "KW_LOOP", NULL, KW_LOOP);
-CASE return process_token(yytext, "KW_CASE", NULL, KW_CASE);
-OF return process_token(yytext, "KW_OF", NULL, KW_OF);
-ARRAY return process_token(yytext, "KW_ARRAY", NULL, KW_ARRAY);
-RECORD return process_token(yytext, "KW_RECORD", NULL, KW_RECORD);
-DOWNTO return process_token(yytext, "KW_DOWNTO", NULL, KW_DOWNTO);
+AND return process_token(yytext, "KW_AND", "", KW_AND);
+BEGIN return process_token(yytext, "KW_BEGIN", "", KW_BEGIN);
+CONST return process_token(yytext, "KW_CONST", "", KW_CONST);
+DIV return process_token(yytext, "KW_DIV", "", KW_DIV);
+DO return process_token(yytext, "KW_DO", "", KW_DO);
+ELSE return process_token(yytext, "KW_ELSE", "", KW_ELSE);
+ELSIF return process_token(yytext, "KW_ELSIF", "", KW_ELSIF);
+END return process_token(yytext, "KW_END", "", KW_END);
+FOR return process_token(yytext, "KW_FOR", "", KW_FOR);
+FROM return process_token(yytext, "KW_FROM", "", KW_FROM);
+IF return process_token(yytext, "KW_IF", "", KW_IF);
+IMPORT return process_token(yytext, "KW_IMPORT", "", KW_IMPORT);
+IN return process_token(yytext, "KW_IN", "", KW_IN);
+MOD return process_token(yytext, "KW_MOD", "", KW_MOD);
+MODULE return process_token(yytext, "KW_MODULE", "", KW_MODULE);
+NOT return process_token(yytext, "KW_NOT", "", KW_NOT);
+OR return process_token(yytext, "KW_OR", "", KW_OR);
+THEN return process_token(yytext, "KW_THEN", "", KW_THEN);
+TYPE return process_token(yytext, "KW_TYPE", "", KW_TYPE);
+TO return process_token(yytext, "KW_TO", "", KW_TO);
+VAR return process_token(yytext, "KW_VAR", "", KW_VAR);
+WHILE return process_token(yytext, "KW_WHILE", "", KW_WHILE);
+REPEAT return process_token(yytext, "KW_REPEAT", "", KW_REPEAT);
+UNTIL return process_token(yytext, "KW_UNTIL", "", KW_UNTIL);
+LOOP return process_token(yytext, "KW_LOOP", "", KW_LOOP);
+CASE return process_token(yytext, "KW_CASE", "", KW_CASE);
+OF return process_token(yytext, "KW_OF", "", KW_OF);
+ARRAY return process_token(yytext, "KW_ARRAY", "", KW_ARRAY);
+RECORD return process_token(yytext, "KW_RECORD", "", KW_RECORD);
+DOWNTO return process_token(yytext, "KW_DOWNTO", "", KW_DOWNTO);
 
  /* identyfikatory */
 
@@ -86,14 +86,14 @@ DOWNTO return process_token(yytext, "KW_DOWNTO", NULL, KW_DOWNTO);
 
  /* operatory jednoznakowe */
 
-[,;=:()+*\-.|<[\]] return process_token(yytext, yytext, NULL, yytext[0]);
+[,;=:()+*\-.|<[\]] return process_token(yytext, yytext, "", yytext[0]);
 
  /* operatory dwuznakowe */
 
-:= return process_token(yytext, "ASSIGN", NULL, ASSIGN);
-"<"= return process_token(yytext, "LE", NULL, LE);
-">"= return process_token(yytext, "GE", NULL, GE);
-"<>" return process_token(yytext, "NEQ", NULL, NEQ);
+:= return process_token(yytext, "ASSIGN", "", ASSIGN);
+"<"= return process_token(yytext, "LE", "", LE);
+">"= return process_token(yytext, "GE", "", GE);
+"<>" return process_token(yytext, "NEQ", "", NEQ);
 
  /* komentarze (na warunkach poczatkowych) */
 
